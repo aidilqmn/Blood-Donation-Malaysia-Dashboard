@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Blood Donation Dashboard (Malaysia)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+    <div id="tooltip" class="tooltip" style="opacity:0;"></div>
+
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <h1>Blood Donation Analysis Dashboard</h1>
+        <p>Malaysia (2020 – 2025)</p>
+    </header>
+
+    <p id="status" class="status-text"></p>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container">
+
+        <!-- ROW 1 -->
+        <section class="row">
+            <div class="card">
+                <h2>Yearly Blood Donations</h2>
+                <div id="yearlychart"></div>
+            </div>
+
+            <div class="card">
+                <h2>New vs Regular Donors</h2>
+                <div id="chart2"></div>
+            </div>
+        </section>
+
+        <!-- ROW 2 -->
+        <section class="row">
+                <div class="card">
+                    <h2>Blood Donations by State</h2>
+                    <p id="stateLabel" class="card-status"></p>
+                    <div class="year-controls">
+                        <button data-year="all" class="active">All</button>
+                        <button data-year="2020">2020</button>
+                        <button data-year="2021">2021</button>
+                        <button data-year="2022">2022</button>
+                        <button data-year="2023">2023</button>
+                        <button data-year="2024">2024</button>
+                        <button data-year="2025">2025</button>
+                    </div>
+
+                    <div class="state-controls">
+                        <button id="resetState">Clear State</button>
+                    </div>
+
+                    <div id="donor_map"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Blood Type Distribution</h2>
+                    <div id="chart4"></div>
+                </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>Data Source: KKM</p>
+        <p>Hariz/Luqman</p>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <!-- Chart functions -->
+    <script src="chart_yearly.js"></script>
+    <script src="chart_donor.js"></script>
+    <script src="donormap.js"></script>
+    <script src="chart_blood.js"></script>
+
+    <!-- Main processing -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
